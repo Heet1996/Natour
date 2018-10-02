@@ -1,0 +1,8 @@
+12 Episode
+1.Three impoertant factors:
+    a.Web performance
+    b.Maintanable code
+    c.Responsive Web
+    
+13 Episode
+1.How CSS Works
