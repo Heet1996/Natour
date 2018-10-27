@@ -1,0 +1,100 @@
+.card
+{
+    perspective: 150rem; //For proper rotation
+    -moz-perspective: 150rem;
+    position: relative;
+    &__side
+    {
+        
+        color:#fff;
+        font-size:2rem;
+        height: 50rem;
+        width:100%;
+        transition: all .8s ease;
+        position: absolute;
+        top:0;
+        left:0;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 2rem rgba($color-black,0.6);
+        backface-visibility: hidden;
+        &--front
+        {
+            background-color:#fff;
+            height:50rem;
+            transform: rotateY(0deg);
+        }
+        &--back{
+            background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary);
+            height:50rem;
+            transform: rotateY(180deg);
+
+        }
+    
+    }
+
+    &:hover &__side--front
+    {
+        transform: rotateY(-180deg);
+
+    }
+    &:hover &__side--back
+    {
+        transform: rotateY(0deg);
+
+    }
+    &__pitcure
+    {   background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+        clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+        &-1{
+        background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary),url('../../img/nat-5.jpg');
+        }
+        &-2{
+            background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary),url('../../img/nat-6.jpg');
+        }
+        &-3{
+            background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary),url('../../img/nat-7.jpg');
+        }
+        
+        
+
+    }
+
+    &__heading{
+        font-size:2.8rem;
+        font-weight:300;
+        text-transform: uppercase;
+        position: absolute;
+        top:13rem;
+        left:11rem;
+        
+        &-span-1{
+            background-image: linear-gradient(to right bottom,rgba($color-secondary-light,0.8),rgba($color-secondary,0.8));
+            padding : 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+        }
+
+    }
+    &__details{
+        ul{
+        list-style: none;
+        width:85%;
+        margin:0 auto;
+        color:black;
+        }
+        li
+        {
+            text-decoration: uppercase;
+            font-size:1.5rem;
+            text-align: center;
+            padding: 1rem;
+            &:not(:last-child){
+            border-bottom: 1px solid #eeeeee;
+            
+            }
+        }
+
+    }
+}
