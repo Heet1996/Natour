@@ -3,6 +3,8 @@
     perspective: 150rem; //For proper rotation
     -moz-perspective: 150rem;
     position: relative;
+    height:50rem;
+    
     &__side
     {
         
@@ -24,7 +26,12 @@
             transform: rotateY(0deg);
         }
         &--back{
-            background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary);
+            &-1
+            {background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary);}
+            &-2
+            {background-image:linear-gradient(to right bottom,$color-tertiary-light,$color-tertiary);}
+      
+            &-3{background-image:linear-gradient(to right bottom,$color-primary-light,$color-primary-dark);}
             height:50rem;
             transform: rotateY(180deg);
 
@@ -42,6 +49,7 @@
         transform: rotateY(0deg);
 
     }
+    //Front Side Styling
     &__pitcure
     {   background-size: cover;
         height: 23rem;
@@ -52,10 +60,10 @@
         background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary),url('../../img/nat-5.jpg');
         }
         &-2{
-            background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary),url('../../img/nat-6.jpg');
+            background-image: linear-gradient(to right bottom,$color-tertiary-light,$color-tertiary),url('../../img/nat-6.jpg');
         }
         &-3{
-            background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary),url('../../img/nat-7.jpg');
+            background-image: linear-gradient(to right bottom,$color-primary-light,$color-primary-dark),url('../../img/nat-7.jpg');
         }
         
         
@@ -68,12 +76,25 @@
         text-transform: uppercase;
         position: absolute;
         top:13rem;
-        left:11rem;
+        left:15rem;
         
         &-span-1{
             background-image: linear-gradient(to right bottom,rgba($color-secondary-light,0.8),rgba($color-secondary,0.8));
             padding : 1rem 1.5rem;
             -webkit-box-decoration-break: clone;
+            
+        }
+        &-span-2{
+            background-image: linear-gradient(to right bottom,rgba($color-tertiary-light,0.8),rgba($color-tertiary,0.8));
+            padding : 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            
+        }
+        &-span-3{
+            background-image: linear-gradient(to right bottom,rgba($color-primary-light,0.8),rgba($color-primary,0.8));
+            padding : 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            
         }
 
     }
@@ -97,4 +118,30 @@
         }
 
     }
+    //Back Side Styling
+    &__cta
+    {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width:100%;
+        
+    }
+    &__price-box
+    {   
+        text-align: center;
+        color:$color-white;
+    }
+    &__price-only
+    {
+        font-size:1.4rem;
+        text-transform:uppercase;
+    }
+    &__price-value{
+        font-size:6rem;
+        font-weight:100;
+    }
+
+
 }

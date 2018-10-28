@@ -47,7 +47,16 @@ animation: moveUp 1s ease-out;
     &::after
     {
     background-color: $color-white;
-
+    }
+}
+.btn--green
+{
+    color:$color-white;
+    background-color: $color-primary;
+    border-radius: 4rem;
+    &::after
+    {
+    background-color: $color-primary;
     }
 }
 .btn-text
