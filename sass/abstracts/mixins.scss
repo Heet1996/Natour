@@ -12,3 +12,30 @@
     top:50%;
     transform: translate(-50%,-50%);
 }
+/*
+Different Screen Size
+1.Mobile <600 px
+2.Tab-potrait 600-900
+3.Tab-landscape 900-1200
+4.Desktop 1200-1800
+5. >1800
+
+*/
+
+// Media Query Manager
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone{
+    @media (max-width: 37.5em) {@content};
+    }
+    @if $breakpoint==tab-port{
+    @media (max-width:56.25em) {@content};
+    }
+    @if $breakpoint==tab-land{
+        @media (max-width:75em) {@content};
+    }
+    @if $breakpoint==desk{
+        @media (min-width:112.5em) {@content};
+    }
+
+
+}
