@@ -4,26 +4,50 @@
     &__photo
     {
         width:55%;
-        box-shadow: 0 1.5rem 2rem rgba($color-black, .2);
+        box-shadow: 0 1.5rem 3rem rgba($color-black, .4);
         border-radius: 2px;
         position:absolute;
         z-index: 10;
         outline-offset:2rem;
         transition: all .2s;
+        @include respond(tab-port)
+        {   float:left;
+            width:33.3333%;
+            position: relative;
+            box-shadow: 0 1.5rem 2rem rgba($color-black, .2);
+
+        }
         &-1
         {
             
             top:-2rem;
             left:0;
+            @include respond(tab-port)
+            {
+                top:0rem;
+                transform: scale(1.2);
+                z-index: 20;
+            }
         }
         &-2
         {   top:2rem;
             right:0;
+            @include respond(tab-port)
+            {
+                top:0rem;
+                transform: scale(1.4);
+            }
         }
         &-3
         {
             top:10rem;
             left:20%;
+            @include respond(tab-port)
+            {
+                top:0rem;
+                left:0;  
+                transform: scale(1.2); 
+            }
         }
         &:hover
         {

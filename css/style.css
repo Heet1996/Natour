@@ -1,11 +1,19 @@
 /*
-Different Screen Size
-1.Mobile <600 px
-2.Tab-potrait 600-900
-3.Tab-landscape 900-1200
-4.Desktop 1200-1800
-5. >1800
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
 
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
 */
 @keyframes moveInLeft {
   0% {
@@ -115,9 +123,15 @@ body {
 
 .margin-bottom-8 {
   margin-bottom: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .margin-bottom-8 {
+      margin-bottom: 5rem !important; } }
 
 .margin-bottom-4 {
   margin-bottom: 4rem !important; }
+  @media (max-width: 56.25em) {
+    .margin-bottom-4 {
+      margin-bottom: 3rem !important; } }
 
 .margin-bottom-2 {
   margin-bottom: 2rem !important; }
@@ -301,21 +315,41 @@ body {
   transition: all .2s; }
   .composition__photo {
     width: 55%;
-    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
     border-radius: 2px;
     position: absolute;
     z-index: 10;
     outline-offset: 2rem;
     transition: all .2s; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        float: left;
+        width: 33.3333%;
+        position: relative;
+        box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2); } }
     .composition__photo-1 {
       top: -2rem;
       left: 0; }
+      @media (max-width: 56.25em) {
+        .composition__photo-1 {
+          top: 0rem;
+          transform: scale(1.2);
+          z-index: 20; } }
     .composition__photo-2 {
       top: 2rem;
       right: 0; }
+      @media (max-width: 56.25em) {
+        .composition__photo-2 {
+          top: 0rem;
+          transform: scale(1.4); } }
     .composition__photo-3 {
       top: 10rem;
       left: 20%; }
+      @media (max-width: 56.25em) {
+        .composition__photo-3 {
+          top: 0rem;
+          left: 0;
+          transform: scale(1.2); } }
     .composition__photo:hover {
       z-index: 20;
       transform: scale(1.05) translateY(-0.5rem);
@@ -338,8 +372,14 @@ body {
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
     color: transparent; }
+    @media (max-width: 56.25em) {
+      .feature-box__icon {
+        margin-bottom: 0; } }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.05); }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      padding: 2rem; } }
 
 .form {
   width: 50%;
@@ -517,6 +557,10 @@ body {
 .row {
   max-width: 114rem;
   margin: 0 auto; }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 3rem; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
     @media (max-width: 56.25em) {
@@ -556,6 +600,9 @@ body {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%); }
+  @media (max-width: 37.5em) {
+    .header {
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0% 100%); } }
   .header__logo {
     height: 3.5rem; }
   .header__logo-box {
@@ -596,6 +643,9 @@ body {
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .footer__logo-box {
+        margin-bottom: 6rem; } }
   .footer__logo {
     width: 15rem;
     height: auto; }
@@ -603,6 +653,10 @@ body {
     border-top: 1px solid #999;
     padding-top: 2rem;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__item {
     display: inline-block; }
     .footer__item:not(:last-child) {
@@ -624,6 +678,11 @@ body {
     padding-top: 2rem;
     width: 80%;
     float: right; }
+    @media (max-width: 56.25em) {
+      .footer__copyright {
+        float: none;
+        width: 100%;
+        text-align: center; } }
 
 .navigation__checkbox {
   display: none; }
@@ -640,6 +699,10 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 4.5rem;
+      right: 4.5rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -651,6 +714,10 @@ body {
   right: 6.5rem;
   z-index: 1000;
   transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem; } }
 
 .navigation__nav {
   position: fixed;
@@ -736,6 +803,9 @@ body {
   background-color: #f7f7f7;
   margin-top: -20vh;
   padding: 25rem 0; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding: 20rem 0; } }
 
 .section-features {
   padding: 20rem 0;
@@ -745,20 +815,32 @@ body {
   margin-top: -10rem; }
   .section-features > * {
     transform: skewY(7deg); }
+  @media (max-width: 56.25em) {
+    .section-features {
+      padding: 10rem 0; } }
 
 .section-tours {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
   margin-top: -13rem; }
+  @media (max-width: 56.25em) {
+    .section-tours {
+      padding: 20rem 0 10rem 0; } }
 
 .section-stories {
   background-color: #f7f7f7;
   padding: 15rem 0;
   position: relative; }
+  @media (max-width: 56.25em) {
+    .section-stories {
+      padding: 10rem 0; } }
 
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+  @media (max-width: 56.25em) {
+    .section-book {
+      padding: 10rem 0; } }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../../img/nat-10.jpg");
