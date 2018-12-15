@@ -8,7 +8,12 @@
     padding: 6rem;
     padding-left: 9rem;
     transform: skewX(-12deg);
-    
+    @include respond(tab-port)
+    {
+        width:100%;
+        padding: 4rem;
+        padding-left: 6rem;
+    }
     &__shape
     {
         width:15rem;
@@ -19,6 +24,11 @@
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
         transition: all 2s;
+
+        @include respond(phone)
+        {
+            transform: translateX(-3rem) skewX(0deg);
+        }
     }
     &__image
     {
@@ -43,6 +53,10 @@
     &__text
     {
         transform: skewX(12deg);
+        @include respond(phone)
+        {
+            transform: skewX(0deg);
+        }
     }
     &:hover &__caption
     {
@@ -54,5 +68,5 @@
         filter:blur(1px) brightness(80%);
         transform: translateX(-4rem) scale(1);
     }
-
+    
 }

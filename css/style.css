@@ -273,15 +273,15 @@ body {
     .card__heading-span-1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8));
       padding: 1rem 1.5rem;
-      -webkit-box-decoration-break: clone; }
+      box-decoration-break: clone; }
     .card__heading-span-2 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8));
       padding: 1rem 1.5rem;
-      -webkit-box-decoration-break: clone; }
+      box-decoration-break: clone; }
     .card__heading-span-3 {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(85, 197, 122, 0.8));
       padding: 1rem 1.5rem;
-      -webkit-box-decoration-break: clone; }
+      box-decoration-break: clone; }
   .card__details ul {
     list-style: none;
     width: 85%;
@@ -309,6 +309,42 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+
+@media (max-width: 56.25em) {
+  .card {
+    height: auto;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.6); }
+    .card__side {
+      height: auto;
+      width: 100%;
+      position: relative;
+      box-shadow: none; }
+      .card__side--back {
+        transform: rotateY(0deg);
+        -webkit-clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%); }
+    .card__details {
+      padding: 1rem 3rem; }
+    .card:hover .card__side--front {
+      transform: rotateY(0deg); }
+    .card__cta {
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem; }
+    .card__price-box {
+      text-align: center;
+      color: #fff; }
+    .card__price-only {
+      font-size: 1.4rem;
+      text-transform: uppercase; }
+    .card__price-value {
+      font-size: 4rem;
+      font-weight: 100; } }
 
 .composition {
   position: relative;
@@ -384,6 +420,9 @@ body {
 .form {
   width: 50%;
   padding: 6rem; }
+  @media (max-width: 75em) {
+    .form {
+      width: 65%; } }
   .form-group:not(:last-child) {
     margin-bottom: 2rem; }
   .form__input {
@@ -521,6 +560,11 @@ body {
   padding: 6rem;
   padding-left: 9rem;
   transform: skewX(-12deg); }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 6rem; } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -530,6 +574,9 @@ body {
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
     transition: all 2s; }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0deg); } }
   .story__image {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
@@ -547,6 +594,9 @@ body {
     backface-visibility: hidden; }
   .story__text {
     transform: skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0deg); } }
   .story:hover .story__caption {
     transform: translate(-50%, -50%);
     opacity: 1; }
@@ -844,5 +894,8 @@ body {
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../../img/nat-10.jpg");
-  background-size: cover;
-  height: 50rem; }
+  background-size: 100%; }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url("../../img/nat-10.jpg");
+      background-size: cover; } }

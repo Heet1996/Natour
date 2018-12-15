@@ -20,6 +20,7 @@
     margin-top:-10rem;
     @include respond(tab-port){
         padding: 10rem 0;
+        
     }
 }
 .section-tours
@@ -54,6 +55,16 @@
     rgba($color-white, .9) 50%,
     transparent 50%) , 
     url('../../img/nat-10.jpg');
-    background-size:cover;
-    height:50rem;
+    background-size: 100%;
+    @include respond(tab-land)
+    {
+        background-image: linear-gradient(105deg,
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 65%,
+        transparent 65%) , 
+        url('../../img/nat-10.jpg');
+        background-size:cover; 
+    }
+    
+    
 }
